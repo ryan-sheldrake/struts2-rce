@@ -23,7 +23,7 @@ node () {
       // Run the maven build
       try{
         if (isUnix()) {
-           sh "cd /Users/ryansheldrake/git/cloudbees-workshop/struts2-rce && ./mvnw  -B -Dmaven.test.failure.ignore clean package"
+           sh "./mvnw  -B -Dmaven.test.failure.ignore clean package"
         } else {
            bat("mvnw.cmd -B -Dmaven.test.failure.ignore clean package")
         }
