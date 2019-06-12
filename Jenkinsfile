@@ -34,7 +34,7 @@ node () {
         currentBuild.result = 'FAILURE'
       
       }
-
+      sh "docker build -t hack \."
       sh "echo current build status ${currentBuild.result}"
       /*
       if (currentBuild.result == 'FAILURE') {
