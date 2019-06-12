@@ -34,7 +34,7 @@ node () {
         currentBuild.result = 'FAILURE'
       
       }
-      sh "cd /Users/ryansheldrake/.jenkins/jobs/struts2-rce/branches/master/workspace/ &&docker build -t hack ."
+      sh "cd /Users/ryansheldrake/.jenkins/jobs/struts2-rce/branches/master/workspace/ && /usr/local/bin/docker build -t hack ."
       sh "echo current build status ${currentBuild.result}"
       /*
       if (currentBuild.result == 'FAILURE') {
