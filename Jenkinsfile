@@ -25,7 +25,7 @@ node () {
       currentBuild.result = 'SUCCESS'
 
       }
-      
+
    stage('Build') {
       // Run the maven build
       try{
