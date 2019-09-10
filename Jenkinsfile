@@ -21,7 +21,8 @@ node () {
    }
    stage('Kill the container') {
       // Run the maven build
-      sh "/usr/local/bin/docker kill \$(/usr/local/bin/docker ps | grep hack | awk '{print \$1;}')" || true
+      sh "/usr/local/bin/docker kill \$(/usr/local/bin/docker ps | grep hack | awk '{print \$1;}')"
+      set +e
 
       }
 
