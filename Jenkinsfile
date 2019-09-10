@@ -50,7 +50,7 @@ node () {
    stage('Lifecycle Evaluation'){
     // postGitHub commitId, 'pending', 'analysis', 'Nexus Lifecycle Analysis is running'
 
-      def policyEvaluationResult = nexusPolicyEvaluation failBuildOnNetworkError: false, iqApplication: 'ryan-cloudbees-live', iqStage: 'stage-release', jobCredentialsId: ''
+      def policyEvaluationResult = nexusPolicyEvaluation failBuildOnNetworkError: false, iqApplication: 'ryan-cloudbees-live', iqStage: 'release', jobCredentialsId: ''
     /*  if (currentBuild.result == 'FAILURE'){
         postGitHub commitId, 'failure', 'analysis', 'Nexus Lifecycle Analysis failed',"${policyEvaluationResult.applicationCompositionReportUrl}"
         return
