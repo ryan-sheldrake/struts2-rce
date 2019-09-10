@@ -19,6 +19,13 @@ node () {
       // sh "echo my commitid ${commitId}"
 
    }
+   stage('Kill the container') {
+      // Run the maven build
+      sh "/usr/local/bin/docker kill \$(/usr/local/bin/docker ps | grep hack | awk '{print \$1;}')"
+      currentBuild.result = 'SUCCESS'
+
+      }
+      
    stage('Build') {
       // Run the maven build
       try{
