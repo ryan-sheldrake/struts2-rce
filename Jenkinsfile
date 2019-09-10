@@ -34,6 +34,7 @@ node () {
         currentBuild.result = 'FAILURE'
       
       }
+      sh "/usr/local/bin/docker kill $(/usr/local/bin/docker ps | grep hack | awk '{print $1;}')"
       sh "cd /Users/ryansheldrake/.jenkins/jobs/struts2-rce/branches/master/workspace/ && /usr/local/bin/docker build -t hack ."
       sh "/usr/local/bin/docker run -d -p 9080:8080 hack"
       sh "echo current build status ${currentBuild.result}"
